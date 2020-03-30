@@ -5,6 +5,8 @@ using UnityEngine;
 public class Collect : MonoBehaviour
 {
     public int score = 0;
+    public bool completed = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,8 @@ public class Collect : MonoBehaviour
             //score += 1;
             score++;
             Destroy(other.gameObject);
+            if(score >= 8)
+                completed = true;
         }
     }
 }
