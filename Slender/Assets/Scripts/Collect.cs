@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Collect : MonoBehaviour
 {
@@ -52,6 +53,12 @@ public class Collect : MonoBehaviour
     void OnTriggerExit(Collider other){
         if(other.gameObject.tag == "Gun"){
             hintTextPanel.SetActive(false);
+        }
+    }
+
+    void OnCollisionEnter(Collision other){
+        if(other.gameObject.name == "Slenderman"){
+            SceneManager.LoadScene("gameover");
         }
     }
 }
