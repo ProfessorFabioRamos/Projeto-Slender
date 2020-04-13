@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shotgun : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Shotgun : MonoBehaviour
                 if(hit.transform.name == "Slenderman"){
                     Instantiate(explodingParticle, hit.transform.position, Quaternion.identity);
                     Destroy(hit.transform.gameObject);
+                    SceneManager.LoadScene(1);
                 }
             }    
         }
